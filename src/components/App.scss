@@ -1,0 +1,34 @@
+@import './common';
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body {
+  background: $white;
+  color: $black;
+  font-family: $sansfont;
+}
+
+// HEADER [HEAD] ---------------------------------------------------------------
+
+// Main [MAIN] -----------------------------------------------------------------
+.main {
+  margin-top: -100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(75vw + 60px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Card [CARD] -----------------------------------------------------------------
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 150px;
+}

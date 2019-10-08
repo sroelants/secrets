@@ -1,0 +1,25 @@
+@import './common';
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.header__nav__brand {
+    font-family: $seriffont;
+    font-size: 3rem;
+}
+
+.header__nav__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav__link {
+    margin: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+}

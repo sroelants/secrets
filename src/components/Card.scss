@@ -1,0 +1,27 @@
+@import './common';
+
+.card {
+    width: calc(25vw - 35px);
+    min-height: 10rem;
+    padding: 1rem;
+    border: 1px solid $lgrey;
+    border-radius: 2px;
+    margin: 10px;
+    background: $white;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.03),
+                2px 4px 4px rgba(0, 0, 0,0.05),
+                0 0  10px rgba(0, 0, 0, 0.05) ;
+}
+
+.card__date {
+    color: $grey;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.card__secret {
+    margin-top: 10px;
+    font-family: $seriffont;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}

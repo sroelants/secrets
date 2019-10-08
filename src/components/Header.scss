@@ -1,0 +1,35 @@
+@import './common';
+
+.header {
+    min-height: 600px;
+    padding: 50px;
+    background: radial-gradient(96.74% 615.24% at 28.94% 72.49%,
+                                #FaFaFa 0%,
+                                rgba(255, 255, 255, 0) 100%),
+                #ECF7F8;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.header__title {
+    margin-left: 50px;
+    font-size: 2rem;
+    color: $lblack;
+}
+
+.header__secret {
+    margin: 20px 50px;
+    font-family: $seriffont;
+    font-size: 2.5rem;
+    width: 50%;
+}
+
+#cursor {
+    border-left: .1em solid $black;
+    animation: blink .7s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
