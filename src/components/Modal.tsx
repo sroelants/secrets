@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Modal.scss';
 
 export enum ModalType {
@@ -7,17 +7,18 @@ export enum ModalType {
 }
 
 export interface IModal {
+  visible: boolean
   type: ModalType;
   closeHandler: (t: ModalType | null) => void;
 }
 
-
-export const Modal: React.FC<IModal> = ({ type, closeHandler }) => {
+export const Modal: React.FC<IModal> = ({ visible, type, closeHandler }) => {
   return (
-    <div className="modal-wrapper">
-      <div className="dimmer" onClick={() => closeHandler(null)}></div>
-      <div className="modal">
-        <button className="modal__close" onClick={() => closeHandler(null)}>
+    <>
+      <div className={visible ? "modal visible" : "modal"} >
+        <button className="modal__close" onClick={() => {
+          setTimeout(() => closeHandler(null));
+        }}>
           <span role="img" aria-label="close">
             &#10060;
           </span>
@@ -55,7 +56,8 @@ export const Modal: React.FC<IModal> = ({ type, closeHandler }) => {
             euismod tellus id erat. </p>
         </div>
       </div>
-    </div >
+      <div className="dimmer" onClick={() => closeHandler(null)}></div>
+    </>
   );
 }
 

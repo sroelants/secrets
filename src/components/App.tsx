@@ -29,9 +29,8 @@ const App: React.FC = () => {
         <Card />
         <Card />
       </main>
-      {modalState !== null
-        ? <Modal type={modalState} closeHandler={setModalHandler} />
-        : null}
+      <Modal visible={modalState === ModalType.About} type={ModalType.About} closeHandler={setModalHandler} />
+      <Modal visible={modalState === ModalType.Share} type={ModalType.Share} closeHandler={setModalHandler} />
       < footer className="footer">Footer</footer>
     </div >
   );
