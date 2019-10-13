@@ -1,13 +1,37 @@
 @import './common';
 
 .header {
-    min-height: 600px;
+    box-sizing: border-box;
+    // min-height: 600px;
+    min-height: 100vh;
     padding: 50px;
-    background: radial-gradient(96.74% 615.24% at 28.94% 72.49%,
-                                #FaFaFa 0%,
-                                rgba(255, 255, 255, 0) 100%),
-                #ECF7F8;
+    // background: radial-gradient(96.74% 615.24% at 28.94% 72.49%,
+    //                             #FaFaFa 0%,
+    //                             rgba(255, 255, 255, 0) 100%),
+    //             #ECF7F8;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(242deg, #fbffdc, #e8fffd, #ffe8f2);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 160s ease infinite;
+    -moz-animation: AnimationName 160s ease infinite;
+    animation: AnimationName 160s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 88%}
+        50%{background-position:100% 13%}
+        100%{background-position:0% 88%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 88%}
+        50%{background-position:100% 13%}
+        100%{background-position:0% 88%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 88%}
+        50%{background-position:100% 13%}
+        100%{background-position:0% 88%}
+}
 }
 
 .header__title {

@@ -8,8 +8,6 @@ export interface IHeader {
   clickHandler: (t: ModalType | null) => void;
 }
 
-
-
 export const Header: React.FC<IHeader> = ({ clickHandler }) => {
   const NavProps: INav = { clickHandler };
   return (
@@ -17,6 +15,7 @@ export const Header: React.FC<IHeader> = ({ clickHandler }) => {
       <Nav {...NavProps} />
       <div className="header__title">Share your secrets with the world.</div>
       <SecretTyper />
+      <HeaderButton>
     </header>
-  );
-}
+      );
+    }

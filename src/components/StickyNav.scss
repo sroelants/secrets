@@ -1,0 +1,71 @@
+@import './common';
+
+.nav {
+    box-sizing: border-box;
+    width: 100%;
+    background: $white;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    visibility: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+    padding: 25px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.03),
+                2px 4px 4px rgba(0, 0, 0,0.05),
+                0 0  10px rgba(0, 0, 0, 0.05) ;
+}
+
+.nav__brand {
+    font-family: $seriffont;
+    font-size: 3rem;
+}
+.nav__brand > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__link {
+    margin: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative
+}
+
+.nav__link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
+    visibility: hidden;
+    // transform: scaleX(0);
+    width: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav__link:hover:before {
+    visibility: visible;
+    // transform: scale(1);
+    width: 100%;
+}
+
+.nav--visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
