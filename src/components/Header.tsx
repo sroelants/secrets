@@ -15,7 +15,6 @@ export const Header: React.FC<IHeader> = ({ clickHandler }) => {
       <Nav {...NavProps} />
       <div className="header__title">Share your secrets with the world.</div>
       <SecretTyper />
-      <HeaderButton>
     </header>
-      );
-    }
+  );
+}

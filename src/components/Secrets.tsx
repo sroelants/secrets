@@ -4,27 +4,24 @@ import { Card } from './Card';
 
 
 export const Secrets: React.FC = () => {
-  const [secrets, setSecrets] = useState(
-    [<Card key={Math.random()} />,
-    <Card key={Math.random()} />,
-    <Card key={Math.random()} />,
-    <Card key={Math.random()} />,
-    <Card key={Math.random()} />,
-    <Card key={Math.random()} />,
-    ]
-  );
+  let initial_secrets: JSX.Element[] = [];
+
+  const [secrets, setSecrets] = useState(initial_secrets);
+  const [secretsPage, setSecretsPage] = useState(1);
   const [intersecting, setIntersecting] = useState(false);
   const sentinel = useRef(null);
 
-  const fetchSecrets = () => {
-    setSecrets(secrets.concat([
-      <Card key={Math.random()} />,
-      <Card key={Math.random()} />,
-      <Card key={Math.random()} />,
-      <Card key={Math.random()} />,
-      <Card key={Math.random()} />,
-      <Card key={Math.random()} />,
-    ]));
+  const addSecrets = () => {
+    const ac = new AbortController();
+    const sig = ac.signal;
+    const response = fetch('http://localhost:5000/api/secrets/' + secretsPage, { signal: sig });
+    response.then((result) => result.json()).then(
+      (json) => json.map((secret: any) => (<Card key={Math.random()} secret={secret.secret} date={secret.date_posted} />))
+    ).then((cards: any) => {
+      setSecrets(secrets.concat(cards));
+    });
+    setSecretsPage(secretsPage + 1);
+    return () => ac.abort();
   }
 
   // Create and attach observer once on mount.
@@ -40,7 +37,7 @@ export const Secrets: React.FC = () => {
     }
   }, []);
 
-  useEffect(fetchSecrets, [intersecting]);
+  useEffect(addSecrets, [intersecting]);
 
   return (
     <>

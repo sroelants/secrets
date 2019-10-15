@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Card.scss';
 
-export const Card: React.FC = () => {
+
+export interface ICard {
+  secret: string
+  date: string
+}
+
+
+export const Card: React.FC<ICard> = ({ secret, date }) => {
   const [visible, setVisible] = useState(false);
+  console.log(date)
+  const dateObject = new Date(date);
+  const shortDate = dateObject.toString().split(" ").slice(1, 4).join(' ');
+  console.log(shortDate);
 
   useEffect(() => {
     setTimeout(() => setVisible(true), Math.random() * 400);
@@ -10,10 +21,8 @@ export const Card: React.FC = () => {
 
   return (
     <div className={visible ? "card card--visible" : "card"}>
-      <div className="card__date">8 Oct 2019</div>
-      <div className="card__secret">This is a deep secret. It is rather
-        long. It has been tormenting me for years and I cannot begin
-        to express how relieved I feel to finally get it off my chest.</div>
+      <div className="card__date">{shortDate}</div>
+      <div className="card__secret">{secret}</div>
     </div>
   );
 }

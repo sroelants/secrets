@@ -1,9 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.scss';
-import { Modal, ModalType, IModal } from './Modal';
+import { AboutModal } from './AboutModal';
+import { ShareModal } from './ShareModal';
 import { Header, IHeader } from './Header';
 import { Secrets } from './Secrets';
 import { StickyNav, IStickyNav } from './StickyNav';
+
+export enum ModalType {
+  About,
+  Share
+}
 
 const App: React.FC = () => {
   const [modalState, setModalState] = useState<ModalType | null>(null);
@@ -42,11 +48,9 @@ const App: React.FC = () => {
       <main className="main">
         <Secrets />
       </main>
-      <Modal visible={modalState === ModalType.About}
-        type={ModalType.About}
+      <AboutModal visible={modalState === ModalType.About}
         closeHandler={setModalHandler} />
-      <Modal visible={modalState === ModalType.Share}
-        type={ModalType.Share}
+      <ShareModal visible={modalState === ModalType.Share}
         closeHandler={setModalHandler} />
       <footer className="footer">Footer</footer>
     </div >
