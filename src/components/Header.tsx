@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss';
 import { Nav, INav } from './Nav';
-import { ModalType } from './Modal';
+import { ModalType } from './App';
 import { SecretTyper } from './SecretTyper';
 
 export interface IHeader {

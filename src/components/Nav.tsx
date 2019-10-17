@@ -1,6 +1,6 @@
 import React from 'react';
 import './Nav.scss';
-import { ModalType } from './Modal';
+import { ModalType } from './App';
 
 export interface INav {
   clickHandler: (t: ModalType | null) => void;

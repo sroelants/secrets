@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalType } from './Modal';
+import { ModalType } from './App';
 import './StickyNav.scss';
 
 

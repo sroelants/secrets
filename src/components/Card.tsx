@@ -10,6 +10,7 @@ export interface ICard {
 
 export const Card: React.FC<ICard> = ({ secret, date }) => {
   const [visible, setVisible] = useState(false);
+  const [liked, setLiked] = useState(false);
   console.log(date)
   const dateObject = new Date(date);
   const shortDate = dateObject.toString().split(" ").slice(1, 4).join(' ');
@@ -21,7 +22,15 @@ export const Card: React.FC<ICard> = ({ secret, date }) => {
 
   return (
     <div className={visible ? "card card--visible" : "card"}>
-      <div className="card__date">{shortDate}</div>
+      <div className="card__header">
+        <div className="card__date">{shortDate}</div>
+        <div className="card__likes">
+          100
+        <img className={liked ? "card__like liked" : "card__like"}
+            src="/assets/img/like.svg"
+            onClick={() => setLiked(!liked)} />
+        </div>
+      </div>
       <div className="card__secret">{secret}</div>
     </div>
   );

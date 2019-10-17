@@ -15,11 +15,13 @@ export const Secrets: React.FC = () => {
     const ac = new AbortController();
     const sig = ac.signal;
     const response = fetch('http://localhost:5000/api/secrets/' + secretsPage, { signal: sig });
-    response.then((result) => result.json()).then(
-      (json) => json.map((secret: any) => (<Card key={Math.random()} secret={secret.secret} date={secret.date_posted} />))
-    ).then((cards: any) => {
-      setSecrets(secrets.concat(cards));
-    });
+    response
+      .then((result) => result.json())
+      .then((json) => json.map(
+        (secret: any) => (<Card key={Math.random()} secret={secret.secret} date={secret.date_posted} />)))
+      .then((cards: any) => { setSecrets(secrets.concat(cards)) })
+      .catch(() => { });
+
     setSecretsPage(secretsPage + 1);
     return () => ac.abort();
   }

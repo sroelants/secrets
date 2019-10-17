@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Modal.scss';
-import { ShareForm } from './ShareForm';
 import { ModalType } from './App'
 
 
