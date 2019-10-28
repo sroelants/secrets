@@ -46,7 +46,7 @@ export const ShareModal: React.FC<IModal> = ({ visible, closeHandler }) => {
           setSecret("");
         }}>
 <img aria-label="close"
-          src="/assets/img/close.svg"
+          src="assets/img/close.svg"
           width="25px"
           alt="close" />
         </button>

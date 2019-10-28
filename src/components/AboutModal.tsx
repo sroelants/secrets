@@ -15,7 +15,7 @@ export const AboutModal: React.FC<IModal> = ({ visible, closeHandler }) => {
           closeHandler(null);
         }}>
         <img aria-label="close"
-          src="/assets/img/close.svg"
+          src="assets/img/close.svg"
           width="25px"
           alt="close" />
         </button>
