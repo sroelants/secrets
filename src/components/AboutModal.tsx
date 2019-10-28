@@ -1,49 +1,62 @@
-import React, { useState, useEffect } from 'react';
 import './Modal.scss';
+import React from 'react';
 import { ModalType } from './App'
 
-
 export interface IModal {
-  visible: boolean
+  visible: boolean;
   closeHandler: (t: ModalType | null) => void;
 }
 
 export const AboutModal: React.FC<IModal> = ({ visible, closeHandler }) => {
   return (
     <>
-      <div className={visible ? "modal visible" : "modal"} >
+      <div className={visible ? "about-modal modal visible" : "about-modal modal"} >
         <button className="modal__close" onClick={() => {
-          setTimeout(() => closeHandler(null));
+          closeHandler(null);
         }}>
-          <span role="img" aria-label="close">
-            &#10060;
-          </span>
+        <img aria-label="close"
+          src="/assets/img/close.svg"
+          width="25px"
+          alt="close" />
         </button>
         <div className="modal__title">About Secrets</div>
         <div className="modal__content">
-          <p> Aliquam erat volutypat. Nunc eleifend leo vitae magna. In id erat
-            non orci commodo lobortis. Proin neque massa, cursus ut, gravida ut,
-            lobortis eget, lacus. Sed diam. Praesent fermentum tempor tellus.
-            Nullam tempus. Mauris ac felis vel velit tristique imperdiet. Donec
-            at pede. Etiam vel neque nec dui dignissim bibendum. Vivamus id
-            enim. Phasellus neque orci, porta a, aliquet quis, semper a, massa.
-            Phasellus purus. Pellentesque tristique imperdiet tortor. Nam
-            euismod tellus id erat. </p>
+          <p>
+          We all know that feeling of relief after sharing a long-kept secret
+          with someone. A weight is lifted. What seemed like a terrible or
+          embarrasing thing all of a sudden doesn't seem that important anymore.
+          Sharing secrets with people brings us perspective. We're not only
+          opening ourselves up to them, we're opening up to ourselves.
+        </p>
 
-          <p> Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi
-            nec facilisis facilisis, est dui fermentum leo, quis tempor ligula
-            erat quis odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed
-            pede. Sed bibendum. Aliquam posuere. Nunc aliquet, augue nec
-            adipiscing interdum, lacus tellus malesuada massa, quis varius mi
-            purus non odio. Pellentesque condimentum, magna ut suscipit
-            hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet
-            urna. Curabitur vulputate vestibulum lorem. Fusce sagittis, libero
-            non molestie mollis, magna orci ultrices dolor, at vulputate neque
-            nulla lacinia eros. Sed id ligula quis est convallis tempor.
-            Curabitur lacinia pulvinar nibh. Nam a sapien. </p>
+        <p>
+          The science <a href="https://psycnet.apa.org/record/2017-20428-001"
+          target="_blank" rel="noopener noreferrer"> has
+          long been in </a> on the benefits of sharing secrets with
+          others. Keeping secrets is a mental, emotional and physical burden.
+          Our minds keep drifting and focussing on them. We are more anxious
+          and adrenaline levels and blood pressure are above average.
+        </p>
+        <p>
+          On the flip side, sharing secrets with others has a tremendous effect
+          on us. Even if we're uncomfortable sharing with someone close to us,
+          for fear of judgement, we ofter share our deepest secrets with people
+          we're not close to, even complete strangers like a hairdresser or
+          taxi driver. Sharing secrets forms bonds of trust, they strengthen
+          social cohesion, even between strangers. Aside from benefiting us
+          emotionally and physically, sharing secrets benefits our society as a
+          hole.
+        </p>
+        <p>
+          This page is meant as a platform for people to share their secrets
+          with strangers, completely anonymously. Perhaps the person sitting
+          next to you on the bus tomorrow will know and sympathize with
+          something you haven't yet had the courage to face up to, and that is
+          an encouraging thought.
+        </p>
         </div>
       </div >
       <div className="dimmer"></div>
     </>
   );
-}
+};

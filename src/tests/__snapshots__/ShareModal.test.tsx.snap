@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShareModal Matches the snapshot 1`] = `
+Array [
+  <div
+    className="share-modal modal visible"
+  >
+    <button
+      className="modal__close"
+      onClick={[Function]}
+    >
+      <img
+        alt="close"
+        aria-label="close"
+        src="/assets/img/close.svg"
+        width="25px"
+      />
+    </button>
+    <div
+      className="modal__title"
+    >
+      Share a secret
+    </div>
+    <div
+      className="modal__content"
+    >
+      <form
+        className="shareform"
+        onSubmit={[Function]}
+      >
+        <textarea
+          className="shareform__textarea"
+          onChange={[Function]}
+          placeholder="Share your secret."
+          value=""
+        />
+        <div>
+          <button
+            className="shareform__button shareform__clear"
+            onClick={[Function]}
+            type="button"
+          >
+             Clear 
+          </button>
+          <input
+            className="shareform__button shareform__submit"
+            type="submit"
+            value="Share"
+          />
+        </div>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="dimmer"
+  />,
+]
+`;

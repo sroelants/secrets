@@ -10,10 +10,8 @@
     background-color: $white;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    z-index: 9
+    transition: all 0.2s;
+    z-index: 9;
 }
 
 .visible ~ .dimmer {
@@ -30,9 +28,7 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     padding: 30px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+    transition: all 0.2s;
     opacity: 0;
     display: flex;
     justify-content: center;
@@ -55,7 +51,7 @@
     margin: 10px;
     font-family: $sansfont;
     font-size: 2rem;
-    text-align: center
+    text-align: center;
 }
 
 .modal__content {
@@ -64,32 +60,35 @@
     font-size: 1rem;
     margin: 20px 10px;
     text-align: justify;
-    line-height: 1.5
+    line-height: 1.5;
+
+    a {
+        color: inherit;
+        &:hover {
+            font-weight: bold;
+        }
+    }
 }
 
 .modal__close {
+    background: inherit;
     font-size: 1.5em;
-    border: none ;
-    background-color: inherit;
-    color: inherit;
+    border: none;
+    outline: none;
     cursor: pointer;
     position: absolute;
-    color: $grey;
-    opacity: 0.4;
-    font-weight: 700;
+    opacity: 0.6;
     top: 0.5em;
     right: 0.5em;
     &:hover {
         cursor: pointer;
-        opacity: 0.6;
+        opacity: 1;
     }
     &:active {
-        border: none;
-        opacity: 0.8;
+        color: $black;
         transform: translatey(2px);
     }
-    &:focus{
-        border: none;
+    &:focus {
         outline: none;
     }
 }

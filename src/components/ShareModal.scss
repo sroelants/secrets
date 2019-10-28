@@ -1,81 +1,82 @@
-@import 'common.scss';
+@import "common";
 
 .shareform {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 30em;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 30em;
 }
 
 .shareform__textarea {
-    font-size: 1.3rem;
-    padding: 10px;
-    box-sizing: border-box;
-    resize: none;
-    width: 100%;
-    height: 300px;
-    background: inherit;
-    border: 1px solid $grey;
-    border-radius: 4px;
-    transition: border 0.2s linear;
-    font-family: $sansfont;
-    color: $black
-
+  background: inherit;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $black;
+  font-family: $sansfont;
+  font-size: 1.3rem;
+  height: 300px;
+  padding: 10px;
+  resize: none;
+  transition: border 0.2s linear;
+  width: 100%;
 }
+
 .shareform__textarea:focus {
-    border: 2px solid $black;
-    outline: none;
+  border: 2px solid $black;
+  outline: none;
 }
 
 .shareform__button {
-    font-family: $sansfont;
-    margin: 10px 0 10px 10px;
-    padding: 6px;
-    font-size: 1.3rem;
-    width: 5em;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    transition: all 0.1s linear;
-    &:hover {
-        cursor: pointer;
-        background-color: $lgrey;
-        color: $black;
-    }
-    &:active {
-        transform: translateY(2px);
-    }
+  -webkit-appearance: none;
+  font-family: $sansfont;
+  margin: 10px 0 10px 10px;
+  padding: 6px;
+  font-size: 1.3rem;
+  width: 5em;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.1s linear;
+  &:hover {
+    cursor: pointer;
+    background-color: $lgrey;
+    color: $black;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
 }
 .shareform__submit {
-    background: $black;
-    color: $white;
+  background: $black;
+  color: $white;
 }
 
 .shareform__clear {
-    background: $grey;
-    color: $white;
+  background: $grey;
+  color: $white;
 }
 
 .shareform__success {
-    font-size: 1.3rem;
-    color: inherit;
-    min-height: 7em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  align-items: center;
+  color: inherit;
+  display: flex;
+  font-size: 1.3rem;
+  justify-content: center;
+  min-height: 7em;
 }
 
 .shareform__success-icon {
-    margin: 10px;
-    animation-duration: 0.3s;
-    animation-name: grow;
+  animation-duration: 0.3s;
+  animation-name: grow;
+  margin: 30px;
 }
 
 @keyframes grow {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }

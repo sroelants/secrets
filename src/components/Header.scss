@@ -1,59 +1,93 @@
-@import './common';
+@import "./common";
 
 .header {
-    box-sizing: border-box;
-    // min-height: 600px;
-    min-height: 100vh;
-    padding: 50px;
-    // background: radial-gradient(96.74% 615.24% at 28.94% 72.49%,
-    //                             #FaFaFa 0%,
-    //                             rgba(255, 255, 255, 0) 100%),
-    //             #ECF7F8;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(242deg, #fbffdc, #e8fffd, #ffe8f2);
-    background-size: 600% 600%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 100px 50px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(242deg, #fbffdc, #e8fffd, #ffe8f2);
+  background-size: 600% 600%;
 
-    -webkit-animation: AnimationName 160s ease infinite;
-    -moz-animation: AnimationName 160s ease infinite;
-    animation: AnimationName 160s ease infinite;
+  -webkit-animation: gradient-anim 160s ease infinite;
+  -moz-animation: gradient-anim 160s ease infinite;
+  animation: gradient-anim 160s ease infinite;
 
-    @-webkit-keyframes AnimationName {
-        0%{background-position:0% 88%}
-        50%{background-position:100% 13%}
-        100%{background-position:0% 88%}
+  @-webkit-keyframes gradient-anim {
+    0% {
+      background-position: 0% 88%;
     }
-    @-moz-keyframes AnimationName {
-        0%{background-position:0% 88%}
-        50%{background-position:100% 13%}
-        100%{background-position:0% 88%}
+    50% {
+      background-position: 100% 13%;
     }
-    @keyframes AnimationName {
-        0%{background-position:0% 88%}
-        50%{background-position:100% 13%}
-        100%{background-position:0% 88%}
-}
+    100% {
+      background-position: 0% 88%;
+    }
+  }
+  @-moz-keyframes gradient-anim {
+    0% {
+      background-position: 0% 88%;
+    }
+    50% {
+      background-position: 100% 13%;
+    }
+    100% {
+      background-position: 0% 88%;
+    }
+  }
+  @keyframes gradient-anim {
+    0% {
+      background-position: 0% 88%;
+    }
+    50% {
+      background-position: 100% 13%;
+    }
+    100% {
+      background-position: 0% 88%;
+    }
+  }
 }
 
 .header__title {
+  text-align: center;
+  font-size: 2rem;
+  color: $lblack;
+  margin: 50px 0 25px 0;
+}
+
+@media (min-width: $bp-wide) {
+  .header__title {
+    text-align: left;
     margin-left: 50px;
-    font-size: 2rem;
-    color: $lblack;
+  }
 }
 
 .header__secret {
-    margin: 20px 50px;
-    font-family: $seriffont;
+  margin: 20px auto;
+  font-family: $seriffont;
+  font-size: 2rem;
+  width: 80%;
+}
+
+@media (min-width: $bp-medium) {
+  .header__secret {
     font-size: 2.5rem;
+  }
+}
+
+@media (min-width: $bp-wide) {
+  .header__secret {
     width: 50%;
+    margin: 20px 50px;
+  }
 }
 
 #cursor {
-    border-left: .1em solid $black;
-    animation: blink .7s steps(1) infinite;
+  border-left: 0.1em solid $black;
+  animation: blink 0.7s steps(1) infinite;
 }
 
 @keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+  50% {
+    border-color: transparent;
+  }
 }
