@@ -60,7 +60,7 @@ export const Card: React.FC<ICard> = ({ secretId, secret, date, likes }) => {
           {localLikes}
           <img alt="like"
             className={liked ? "card__like liked" : "card__like"}
-            src="/assets/img/like.svg"
+            src="assets/img/like.svg"
             onClick={handleLike}
           />
         </div>
