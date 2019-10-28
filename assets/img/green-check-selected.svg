@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <title>green-check-selected</title>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m0,0l24,0l0,24l-24,0l0,-24z" fill="none"/>
+  <path fill="#1a964e" id="svg_2" d="m19,3l-14,0c-1.1,0 -2,0.9 -2,2l0,14c0,1.1 0.9,2 2,2l14,0c1.1,0 2,-0.9 2,-2l0,-14c0,-1.1 -0.9,-2 -2,-2zm0,16l-14,0l0,-14l14,0l0,14zm-1.01,-10l-1.41,-1.42l-6.59,6.59l-2.58,-2.57l-1.42,1.41l4,3.99l8,-8z"/>
+ </g>
+</svg>
